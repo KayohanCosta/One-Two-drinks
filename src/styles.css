@@ -1,4 +1,4 @@
-@import "tailwindcss" source(none);
+@import "tailwindcss";
 @source "../src";
 @import "tw-animate-css";
 
@@ -108,11 +108,13 @@
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
+    appearance: none;
     margin: 0;
   }
 
   input[type=number] {
     -moz-appearance: textfield;
+    appearance: textfield;
   }
 
   /* Style date input calendar icon */
