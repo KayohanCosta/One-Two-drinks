@@ -63,7 +63,7 @@ function HomePage() {
               className="mt-10 max-w-lg text-lg text-muted-foreground leading-relaxed"
             >
               No One Two Drink, cada coquetel é roteiro: um começo cítrico, um meio amargo,
-              um final de fumaça. Reservamos a mesa, você traz o resto.
+              um final de fumaça. Levamos a estrutura, você traz a celebração.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
