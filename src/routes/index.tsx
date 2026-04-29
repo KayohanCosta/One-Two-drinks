@@ -36,7 +36,7 @@ function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
         </div>
 
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-8 pt-24 w-full">
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-8 pt-24 pb-32 w-full">
           <div className="lg:col-span-7">
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -73,16 +73,16 @@ function HomePage() {
             >
               <Link
                 to="/eventos"
-                className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 text-eyebrow hover:shadow-ember transition-shadow"
+                className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 text-eyebrow hover:shadow-ember transition-shadow w-full sm:w-auto justify-center"
               >
                 Solicitar orçamento
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition" />
               </Link>
               <Link
                 to="/drinks"
-                className="inline-flex items-center gap-3 border border-border text-foreground px-8 py-4 text-eyebrow hover:border-primary hover:text-primary transition-colors"
+                className="inline-flex items-center gap-3 border border-border text-foreground px-8 py-4 text-eyebrow hover:border-primary hover:text-primary transition-colors w-full sm:w-auto justify-center"
               >
-                Ver carta
+                Nossos drinks
               </Link>
             </motion.div>
           </div>
@@ -92,7 +92,7 @@ function HomePage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-6 lg:left-12 text-eyebrow text-muted-foreground"
+          className="absolute bottom-6 left-6 lg:left-12 text-eyebrow text-muted-foreground hidden sm:block"
         >
           ↓ role para descobrir
         </motion.div>
