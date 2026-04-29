@@ -89,6 +89,7 @@
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     letter-spacing: 0.01em;
+    color-scheme: dark;
   }
 
   h1, h2, h3, h4 {
@@ -101,6 +102,23 @@
   ::selection {
     background-color: var(--ember);
     color: var(--charcoal);
+  }
+
+  /* Hide number input arrows */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  /* Style date input calendar icon */
+  input::-webkit-calendar-picker-indicator {
+    filter: invert(48%) sepia(87%) saturate(2228%) hue-rotate(345deg) brightness(85%) contrast(95%);
+    cursor: pointer;
   }
 }
 

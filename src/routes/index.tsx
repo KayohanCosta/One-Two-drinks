@@ -9,10 +9,10 @@ import interiorImg from "@/assets/bar-interior.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "One Two Drink Bar — Coquetelaria autoral em São Paulo" },
-      { name: "description", content: "Bar de coquetelaria autoral com drinks assinados, ambiente intimista e noites memoráveis na Vila Madalena." },
-      { property: "og:title", content: "One Two Drink Bar" },
-      { property: "og:description", content: "Coquetelaria autoral. Ambiente intimista. Noites memoráveis." },
+      { title: "One Two Drink — Experiências em Coquetelaria para Eventos" },
+      { name: "description", content: "Levamos a experiência de um bar de alta coquetelaria para o seu evento com equipe especializada e drinks autorais assinados." },
+      { property: "og:title", content: "One Two Drink — Eventos" },
+      { property: "og:description", content: "Coquetelaria de alto padrão. Equipe especializada. Experiências memoráveis." },
       { property: "og:image", content: heroImg },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: heroImg },
@@ -75,7 +75,7 @@ function HomePage() {
                 to="/eventos"
                 className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 text-eyebrow hover:shadow-ember transition-shadow"
               >
-                Reservar mesa
+                Solicitar orçamento
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition" />
               </Link>
               <Link
@@ -121,24 +121,23 @@ function HomePage() {
           <div className="lg:col-span-5">
             <p className="text-eyebrow text-primary mb-6">Manifesto</p>
             <h2 className="text-5xl md:text-6xl lg:text-7xl">
-              Bar não é só<br /> sobre o que se <span className="italic text-primary">bebe.</span>
+              Evento não é só<br /> sobre o copo. <span className="italic text-primary">É sobre a entrega.</span>
             </h2>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-muted-foreground text-lg leading-relaxed">
             <p>
-              É sobre a luz quente que cai na pedra de gelo, o riso que escapa da mesa do canto,
-              a primeira garrafa que se abre quando o relógio marca dezoito.
+              É sobre a precisão do serviço, a elegância do balcão montado e a hospitalidade que 
+              recebe cada convidado como se estivesse no melhor bar da cidade.
             </p>
             <p>
-              Nossa carta nasce no balcão e termina na conversa. Cada drink tem nome, tem
-              receita e tem motivo — porque acreditamos que beber bem é, antes de tudo, um
-              gesto de presença.
+              Nossa equipe não apenas serve drinks; nós criamos o ambiente. Cada coquetel é um
+              ponto de contato entre a técnica apurada e a memória que seu evento deixará.
             </p>
             <Link
               to="/sobre"
               className="inline-flex items-center gap-2 text-primary text-eyebrow hover:gap-4 transition-all"
             >
-              Conheça a casa <ArrowRight size={14} />
+              Nossa história <ArrowRight size={14} />
             </Link>
           </div>
         </div>
@@ -184,26 +183,25 @@ function HomePage() {
         </div>
       </section>
 
-      {/* AMBIENT */}
       <section className="relative h-[70vh] overflow-hidden">
         <img
           src={interiorImg}
-          alt="Interior do bar com luz âmbar"
+          alt="Bar montado em evento"
           loading="lazy"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 px-6 lg:px-12 pb-20">
           <div className="max-w-[1400px] mx-auto">
-            <p className="text-eyebrow text-primary mb-4">Onde nos encontrar</p>
+            <p className="text-eyebrow text-primary mb-4">Experiência completa</p>
             <h2 className="text-5xl md:text-7xl max-w-3xl">
-              Vila Madalena.<br /><span className="italic">Esquina escondida.</span>
+              Seu evento.<br /><span className="italic">Nossa expertise.</span>
             </h2>
             <Link
-              to="/contato"
+              to="/eventos"
               className="inline-flex items-center gap-3 mt-10 border border-primary text-primary px-8 py-4 text-eyebrow hover:bg-primary hover:text-primary-foreground transition"
             >
-              Como chegar <ArrowRight size={16} />
+              Fazer orçamento <ArrowRight size={16} />
             </Link>
           </div>
         </div>

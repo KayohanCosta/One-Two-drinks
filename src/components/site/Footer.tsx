@@ -10,7 +10,7 @@ export function Footer() {
             One <span className="italic text-primary">Two</span> Drink
           </h3>
           <p className="mt-4 text-muted-foreground max-w-sm leading-relaxed">
-            Coquetelaria autoral em ambiente intimista. Onde cada drink conta uma história e cada noite vira lembrança.
+            Coquetelaria de alto padrão para eventos. Levamos a expertise do balcão e uma equipe especializada para transformar sua celebração.
           </p>
           <a
             href="https://www.instagram.com/onetwodrinkbar/"
@@ -18,41 +18,38 @@ export function Footer() {
             rel="noreferrer"
             className="inline-flex items-center gap-2 mt-6 text-eyebrow text-muted-foreground hover:text-primary transition"
           >
-            <Instagram size={16} /> @onetwodrinkbar
+            <Instagram size={16} /> @onetwodrink
           </a>
         </div>
 
         <div>
-          <p className="text-eyebrow text-primary mb-4">Visite</p>
+          <p className="text-eyebrow text-primary mb-4">Atendimento</p>
           <p className="flex items-start gap-2 text-sm text-muted-foreground leading-relaxed">
             <MapPin size={16} className="mt-1 text-primary shrink-0" />
-            Rua das Noites, 12<br />Vila Madalena · São Paulo
+            Atendemos Fortaleza e outras localidades.<br />Consulte disponibilidade para outras cidades.
           </p>
           <p className="flex items-center gap-2 mt-4 text-sm text-muted-foreground">
-            <Phone size={16} className="text-primary" /> (11) 9 9999-0000
+            <Phone size={16} className="text-primary" /> (85) 98181-5287
           </p>
         </div>
 
         <div>
-          <p className="text-eyebrow text-primary mb-4">Horário</p>
-          <ul className="text-sm text-muted-foreground space-y-1">
-            <li>Ter – Qui · 18h – 00h</li>
-            <li>Sex – Sáb · 18h – 02h</li>
-            <li>Dom · 17h – 23h</li>
-            <li>Seg · Fechado</li>
-          </ul>
+          <p className="text-eyebrow text-primary mb-4">Orçamentos</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Personalizamos a carta de drinks de acordo com o perfil do seu evento.
+          </p>
           <Link
             to="/eventos"
             className="inline-block mt-6 text-eyebrow text-primary hover:underline"
           >
-            Reservar mesa →
+            Solicitar orçamento →
           </Link>
         </div>
       </div>
       <div className="border-t border-border">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-6 flex flex-col sm:flex-row justify-between text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} One Two Drink Bar. Todos os direitos reservados.</p>
-          <p className="italic font-display text-base">Beba com responsabilidade.</p>
+          <p>© {new Date().getFullYear()} One Two Drink. Todos os direitos reservados.</p>
+          <p className="italic font-display text-base">Beba com responsabilidade. | Bebidas proibidas para menores de 18 anos.</p>
         </div>
       </div>
     </footer>

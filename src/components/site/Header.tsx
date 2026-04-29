@@ -33,7 +33,6 @@ export function Header() {
           <span className="font-display text-2xl tracking-tight">One</span>
           <span className="font-display text-2xl italic text-primary group-hover:ember-glow transition">Two</span>
           <span className="font-display text-2xl tracking-tight">Drink</span>
-          <span className="text-eyebrow text-muted-foreground ml-2 hidden sm:inline">/ Bar</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-10">
@@ -54,7 +53,7 @@ export function Header() {
           to="/eventos"
           className="hidden lg:inline-flex items-center px-5 py-2.5 border border-primary text-primary text-eyebrow hover:bg-primary hover:text-primary-foreground transition-colors"
         >
-          Reservar
+          Orçamento
         </Link>
 
         <button

@@ -1,63 +1,135 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
-import { Instagram, Mail, MapPin, Phone, MessageCircle } from "lucide-react";
+import { Instagram, Mail, MessageCircle, MapPin, type LucideIcon } from "lucide-react";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
-      { title: "Contato — One Two Drink Bar" },
-      { name: "description", content: "Endereço, horário e canais de contato do One Two Drink Bar na Vila Madalena, São Paulo." },
-      { property: "og:title", content: "Contato — One Two Drink Bar" },
-      { property: "og:description", content: "Endereço, horário e canais de contato." },
+      { title: "Contato — One Two Drink" },
+      {
+        name: "description",
+        content:
+          "Fale com a One Two Drink para orçamentos de coquetelaria em eventos e celebrações.",
+      },
+      { property: "og:title", content: "Contato — One Two Drink" },
+      {
+        property: "og:description",
+        content: "Canais de contato para orçamentos e informações.",
+      },
     ],
   }),
   component: ContactPage,
 });
 
 function ContactPage() {
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleWhatsAppRedirect = (e: React.FormEvent) => {
+    e.preventDefault();
+    const phone = "5585981815287";
+    const text = `Olá! Meu nome é ${name}. ${message}`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank");
+  };
+
   return (
     <Layout>
       <PageHero
-        eyebrow="Visite · fale · siga"
-        title="Aparece"
-        italic="por aqui."
-        description="A porta é discreta, mas a luz é quente. Estamos numa esquina da Vila Madalena."
+        eyebrow="Fale · siga · solicite"
+        title="Vamos planejar"
+        italic="seu evento?"
+        description="Estamos prontos para levar a melhor experiência de coquetelaria para a sua celebração."
       />
 
       <section className="py-20 px-6 lg:px-12">
-        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12">
-          <div className="space-y-10">
-            <Item icon={MapPin} title="Endereço" lines={["Rua das Noites, 12", "Vila Madalena · São Paulo · SP", "CEP 05433-000"]} />
-            <Item icon={Phone} title="Telefone" lines={["(11) 9 9999-0000"]} link="tel:+5511999990000" />
-            <Item icon={MessageCircle} title="WhatsApp · reservas" lines={["(11) 9 9999-0000"]} link="https://wa.me/5511999990000" />
-            <Item icon={Mail} title="E-mail" lines={["ola@onetwodrink.com.br"]} link="mailto:ola@onetwodrink.com.br" />
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16">
+          <div className="space-y-10 lg:col-span-1">
+            <Item
+              icon={MessageCircle}
+              title="WhatsApp · orçamentos"
+              lines={["(85) 98181-5287"]}
+              link="https://wa.me/5585981815287"
+            />
+            <Item
+              icon={Mail}
+              title="E-mail"
+              lines={["ola@onetwodrink.com.br"]}
+              link="mailto:ola@onetwodrink.com.br"
+            />
             <Item
               icon={Instagram}
               title="Instagram"
-              lines={["@onetwodrinkbar"]}
-              link="https://www.instagram.com/onetwodrinkbar/"
+              lines={["@onetwodrink"]}
+              link="https://www.instagram.com/onetwodrink/"
             />
 
-            <div className="pt-6 border-t border-border">
-              <p className="text-eyebrow text-primary mb-4">Horário de funcionamento</p>
-              <ul className="space-y-2 text-lg">
-                <Row d="Terça – Quinta" h="18h — 00h" />
-                <Row d="Sexta – Sábado" h="18h — 02h" />
-                <Row d="Domingo" h="17h — 23h" />
-                <Row d="Segunda" h="Fechado" muted />
-              </ul>
+            <div className="pt-10 border-t border-border">
+              <p className="text-eyebrow text-primary mb-6">Atendimento</p>
+              <div className="space-y-4">
+                <p className="text-xl text-foreground font-display">
+                  Fortaleza e Região
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Atendemos em toda a capital e outras localidades sob consulta.
+                  Para eventos em outros estados, consulte nossa disponibilidade
+                  e logística.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="relative h-[600px] lg:h-auto min-h-[500px] border border-border overflow-hidden">
-            <iframe
-              title="Mapa"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-46.692%2C-23.560%2C-46.682%2C-23.550&layer=mapnik"
-              className="w-full h-full grayscale contrast-125 brightness-75"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-primary/10 pointer-events-none mix-blend-overlay" />
+          <div className="lg:col-span-1">
+            <p className="text-eyebrow text-primary mb-4">Envie uma mensagem</p>
+            <h3 className="text-3xl font-display mb-8">
+              Mande um <span className="italic">oi.</span>
+            </h3>
+
+            <form onSubmit={handleWhatsAppRedirect} className="space-y-6">
+              <div>
+                <label className="text-eyebrow text-muted-foreground block mb-3">
+                  Nome
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Seu nome completo"
+                  className="w-full bg-transparent border-b border-border focus:border-primary outline-none py-3 text-foreground transition-colors"
+                />
+              </div>
+              <div>
+                <label className="text-eyebrow text-muted-foreground block mb-3">
+                  Mensagem
+                </label>
+                <textarea
+                  required
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Como podemos te ajudar?"
+                  rows={4}
+                  className="w-full bg-transparent border-b border-border focus:border-primary outline-none py-3 text-foreground transition-colors"
+                />
+              </div>
+              <button
+                type="submit"
+                className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-4 text-eyebrow hover:shadow-ember transition"
+              >
+                Falar no WhatsApp
+              </button>
+            </form>
+
+            <div className="mt-12 pt-8 border-t border-border">
+              <p className="text-sm text-muted-foreground">
+                Prefere um formulário detalhado?{" "}
+                <Link to="/eventos" className="text-primary hover:underline">
+                  Solicitar orçamento completo →
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -71,7 +143,7 @@ function Item({
   lines,
   link,
 }: {
-  icon: typeof MapPin;
+  icon: LucideIcon;
   title: string;
   lines: string[];
   link?: string;
